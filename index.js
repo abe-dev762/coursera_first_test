@@ -1,10 +1,19 @@
-let length;
-let width;
+let count = 0;
 
-function calculateArea() {
-    length = parseFloat(document.getElementById('length').value);
-    width = parseFloat(document.getElementById('width').value);
-    let area = length * width;
+function increaseCount() {
+    count++;
+    displayCount();
+    checkCountValue();
+}
 
-    result = document.getElementById('result').innerText = `the area of the rectangle is: ${area}`;
+function displayCount() {
+    document.getElementById('countDisplay').innerHTML=count;
+}
+
+function checkCountValue() {
+    if (count === 10)  {
+        alert("You gained 10 followers! Congratulation!");
+    } else if (count === 20) {
+        alert("You gained 20 followers! Keep it up!");
+    }
 }
