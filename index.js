@@ -1,19 +1,28 @@
-let count = 0;
-
-function increaseCount() {
-    count++;
-    displayCount();
-    checkCountValue();
+function submitFeedback() {
+    alert('Thank you for your feedback');
+document.getElementById('userName').innerHTML = username;
+document.getElementById('UserAge').innerHTML = age;
+document.getElementById('userEmail').innerHTML = email;
+document.getElementById('UserJob').innerHTML = job;
+document.getElementById('Userdesignation').innerHTML = designation;
+document.getElementById('userProductType').innerHTML = productType;
+document.getElementById('userFeedback').innerHTML = feedback;
+document.getElementById('userInfo').style.display = 'block';
 }
+ 
+const name = document.getElementById('name').value;
+ const age = document.getElementById('age').value;
+ const email = document.getElementById('email').value;
+ const job = document.getElementById('job').value;
+ const designation = document.getElementById('designation').value;
+ const productType = document.getElementById('productType').value;
+ const feedbackText = document.getElementById('feedbackText').value;
+ const submitButton = document.getElementById('sumbitBtn');
 
-function displayCount() {
-    document.getElementById('countDisplay').innerHTML=count;
-}
+ submitButton.onclick = submitFeedback();
 
-function checkCountValue() {
-    if (count === 10)  {
-        alert("You gained 10 followers! Congratulation!");
-    } else if (count === 20) {
-        alert("You gained 20 followers! Keep it up!");
+ document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        submitFeedback();
     }
-}
+ })
